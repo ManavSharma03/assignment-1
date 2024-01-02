@@ -18,7 +18,14 @@ const RandomQuotes = () => {
     }, []);
 
     const handleFetchingQuotes = async () => {
-        const quotesList = await fetchMockQuotes().catch((err) => setQuotes(mockQuotes));
+        const quotesList = await fetchMockQuotes().catch((err) => {
+            /**
+             * TODO: Currently have used mock data because of error with the RapidAPI 
+             * 1. API-key error
+             * 2. CORS error
+             */
+            setQuotes(mockQuotes);
+        });
         if (quotesList?.length) {
             setQuotes(quotesList);
         }
@@ -31,15 +38,14 @@ const RandomQuotes = () => {
     }
     return (
         <>
-            <>
-                {quotes.map((quote) => {
-                    return (
-                        <div className="text-container ">
-                            <p className="quote "> {quote.text}</p>
-                        </div>
-                    );
-                })}
-            </>
+            {quotes.map((quote) => {
+                return (
+                    <div className="text-container ">
+                        <p className="quote "> {quote.text}</p>
+                    </div>
+                );
+            })}
+
         </>
     );
 }

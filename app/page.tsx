@@ -1,6 +1,5 @@
 "use client"
-import { fetchMockQuotes } from './services/mockQuotes'
-import { useEffect, useState } from 'react';
+import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import CharacterCounter from '@/components/character-counter';
 import TimeConvertor from '@/components/time-convertor';
@@ -8,14 +7,9 @@ import RandomQuotes from '@/components/random-quotes';
 
 
 export default function Home() {
-
-
-
   return (
     <>
-
       <div className='container'>
-
         <Tabs defaultValue="solution1" className="w-[400px]">
           <div className='content-container'>
             <TabsList>
