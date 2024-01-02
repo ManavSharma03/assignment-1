@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh-100px);
+    width: 100%;
+    margin: 0;
+    padding: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.content-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.convert-button {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.convert-button:hover {
+    background-color:rgb(4, 130, 172);
+    color: white;
+}
+
+.text-input {
+    border: 1px solid black;
+}
+
+.text-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 400px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the div horizontally */
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .quote {
+    font-style: italic;
+    color: #555;
+  }
